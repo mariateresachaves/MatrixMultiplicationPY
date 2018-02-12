@@ -1,6 +1,7 @@
 import sys
 import numpy as np
 import time
+import random
 
 def matrixmult (A, B):
     n = len(A[0])
@@ -13,10 +14,11 @@ def matrixmult (A, B):
                 C[i][j] += A[i][k] * B[k][j]
     return C
 
-start_time = time.time()
+# Fill 2 matrices with random values between 1 and 100
+A = [[random.randint(1,100) for row in range(500)] for col in range(500)]
+B = [[random.randint(1,100) for row in range(500)] for col in range(500)]
 
-A = [[2 for row in range(500)] for col in range(500)]
-B = [[2 for row in range(500)] for col in range(500)]
+start_time = time.time()
 
 C = matrixmult(A, B)
 
